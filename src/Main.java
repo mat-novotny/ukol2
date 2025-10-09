@@ -24,7 +24,7 @@ public class Main {
 
         Booking booking1 = new Booking(LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), room1, guest1);
         Booking booking2 = new Booking(LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), room3, guest1);
-        booking2.addGuest(guest2);
+        booking2.getGuests().add(guest2);
         List<Booking> bookingList = new ArrayList<>();
         bookingList.add(booking1);
         bookingList.add(booking2);

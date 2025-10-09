@@ -57,14 +57,6 @@ public class Booking {
         this.guests = guests;
     }
 
-    public void addGuest(Guest guest)
-    {
-        this.guests.add(guest);
-    }
-    public void removeGuest(Guest guest)
-    {
-        this.guests.remove(guest);
-    }
 
     public boolean isBusinessTrip() {
         return isBusinessTrip;
