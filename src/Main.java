@@ -14,8 +14,8 @@ public class Main {
         Guest guest1 = new Guest("Adéla","Malíková", LocalDate.of(1993,3,13));
         Guest guest2 = new Guest("Jan", "Dvořáček",LocalDate.of(1995,5,5));
         guest2.setBirthDate(LocalDate.of(1995,5,4));
-        DateTimeFormatter czechFormat = DateTimeFormatter.ofPattern("d.M.yyyy");
-        System.out.println(guest2.getFirstName() + " " + guest2.getLastName() + " (" + guest2.getBirthDate().format(czechFormat) + ")");
+        DateTimeFormatter czechFormat = DateTimeFormatter.ofPattern("d. M. yyyy");
+        System.out.println(guest2.getDescription());
 
         Room room1 = new Room(1,1,1000,true,true);
         Room room2 = new Room(2,1,1000,true,true);
@@ -45,10 +45,10 @@ public class Main {
             System.out.println("Celková cena: " + booking.getDeparture().compareTo(booking.getArrival()) * booking.getRoom().getPrice() + " Kč");
             System.out.println("Hosté:");
             Guest mainGuest = booking.getMainGuest();
-            System.out.println("- " + mainGuest.getFirstName() + " " + booking.getMainGuest().getLastName());
+            System.out.println("- " + mainGuest.getDescription());
             for (Guest guest : booking.getGuests())
             {
-                System.out.println("- " + guest.getFirstName() + " " + guest.getLastName());
+                System.out.println("- " + guest.getDescription());
             }
             System.out.println();
 

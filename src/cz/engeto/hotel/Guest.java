@@ -1,6 +1,7 @@
 package cz.engeto.hotel;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Guest {
     private String firstName;
@@ -36,5 +37,9 @@ public class Guest {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getDescription () {
+        return (this.firstName + " " + this.lastName +  " (" + this.birthDate.format(DateTimeFormatter.ofPattern("d. M. yyyy")) + ")");
     }
 }
