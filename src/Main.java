@@ -20,17 +20,11 @@ public class Main {
         Room room1 = new Room(1,1,1000,true,true);
         Room room2 = new Room(2,1,1000,true,true);
         Room room3 = new Room(3,3,2400,false,true);
-        List<Guest> guestList1 = new ArrayList<>();
-        guestList1.add(guest1);
-
-        List<Guest> guestList2 = new ArrayList<>();
-        guestList2.add(guest1);
-        guestList2.add(guest2);
 
 
-        Booking booking1 = new Booking(LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), room1, guestList1);
-        Booking booking2 = new Booking(LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), room3, guestList2);
-
+        Booking booking1 = new Booking(LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), room1, guest1);
+        Booking booking2 = new Booking(LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), room3, guest1);
+        booking2.addGuest(guest2);
         List<Booking> bookingList = new ArrayList<>();
         bookingList.add(booking1);
         bookingList.add(booking2);
@@ -50,6 +44,8 @@ public class Main {
             System.out.println("Pokoj: " + booking.getRoom().getID());
             System.out.println("Celková cena: " + booking.getDeparture().compareTo(booking.getArrival()) * booking.getRoom().getPrice() + " Kč");
             System.out.println("Hosté:");
+            Guest mainGuest = booking.getMainGuest();
+            System.out.println("- " + mainGuest.getFirstName() + " " + booking.getMainGuest().getLastName());
             for (Guest guest : booking.getGuests())
             {
                 System.out.println("- " + guest.getFirstName() + " " + guest.getLastName());
