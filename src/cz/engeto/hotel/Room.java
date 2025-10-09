@@ -3,11 +3,11 @@ package cz.engeto.hotel;
 public class Room {
     private int ID;
     private int beds;
-    private double price;
+    private int price;
     private boolean balcony;
     private boolean seaView;
 
-    public Room(int ID, int beds, double price, boolean balcony, boolean seaView) {
+    public Room(int ID, int beds, int price, boolean balcony, boolean seaView) {
         this.ID = ID;
         this.beds = beds;
         this.price = price;
@@ -15,7 +15,7 @@ public class Room {
         this.seaView = seaView;
     }
 
-    public Room(int ID, int beds, double price)
+    public Room(int ID, int beds, int price)
     {
         this(ID,beds,price,false,false);
     }
@@ -36,11 +36,11 @@ public class Room {
         this.beds = beds;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
