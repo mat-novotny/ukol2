@@ -44,8 +44,6 @@ public class Main {
             System.out.println("Pokoj: " + booking.getRoom().getID());
             System.out.println("Celková cena: " + booking.getDeparture().compareTo(booking.getArrival()) * booking.getRoom().getPrice() + " Kč");
             System.out.println("Hosté:");
-            Guest mainGuest = booking.getMainGuest();
-            System.out.println("- " + mainGuest.getDescription());
             for (Guest guest : booking.getGuests())
             {
                 System.out.println("- " + guest.getDescription());

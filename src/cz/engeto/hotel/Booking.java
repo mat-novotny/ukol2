@@ -9,7 +9,6 @@ public class Booking {
     private LocalDate arrival;
     private LocalDate departure;
     private Room room;
-    private Guest mainGuest;
     private List<Guest> guests = new ArrayList<>();
     private boolean isBusinessTrip;
 
@@ -17,7 +16,7 @@ public class Booking {
         this.arrival = arrival;
         this.departure = departure;
         this.room = room;
-        this.mainGuest = mainGuest;
+        guests.add(mainGuest);
         this.isBusinessTrip = isBusinessTrip;
     }
 
@@ -66,11 +65,4 @@ public class Booking {
         isBusinessTrip = businessTrip;
     }
 
-    public Guest getMainGuest() {
-        return mainGuest;
-    }
-
-    public void setMainGuest(Guest mainGuest) {
-        this.mainGuest = mainGuest;
-    }
 }
