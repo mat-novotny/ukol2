@@ -80,6 +80,7 @@ public class BookingManager {
                     many++;
             }
         }
+        System.out.println("Statistiky hostů: ");
         if(single==0)
         {
             System.out.println("Žádná rezervace pro jednoho hosta");
