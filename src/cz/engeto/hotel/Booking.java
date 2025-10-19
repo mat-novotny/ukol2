@@ -76,14 +76,14 @@ public class Booking {
         return getBookingLength() * room.getPrice();
     }
 
-    public void getFormattedSummary()
+    public String getFormattedSummary()
     {
         Guest mainGuest = guests.get(0);
         DateTimeFormatter czechFormat = DateTimeFormatter.ofPattern("d. M. yyyy");
         String output = arrival.format(czechFormat) + " až " + departure.format(czechFormat)
                 + ": " + mainGuest.getDescription() + "[" + guests.size() + ", " + room.isSeaView() + "] "
                 + "za " + getTotalPrice() + " Kč";
-        System.out.println();
+       return output;
     }
 
 }
