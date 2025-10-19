@@ -1,6 +1,7 @@
 package cz.engeto.hotel;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,6 +64,26 @@ public class Booking {
 
     public void setBusinessTrip(boolean businessTrip) {
         isBusinessTrip = businessTrip;
+    }
+
+    public int getBookingLength()
+    {
+        return departure.compareTo(arrival);
+    }
+
+    public int getTotalPrice()
+    {
+        return getBookingLength() * room.getPrice();
+    }
+
+    public void getFormattedSummary()
+    {
+        Guest mainGuest = guests.get(0);
+        DateTimeFormatter czechFormat = DateTimeFormatter.ofPattern("d. M. yyyy");
+        String output = arrival.format(czechFormat) + " až " + departure.format(czechFormat)
+                + ": " + mainGuest.getDescription() + "[" + guests.size() + ", " + room.isSeaView() + "] "
+                + "za " + getTotalPrice() + " Kč";
+        System.out.println();
     }
 
 }
